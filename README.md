@@ -3,7 +3,8 @@ This repository includes a Nextflow pipeline to shuffle reference panels and com
 
 ## Getting started
 ```
-docker build -t seppinho/imputation-panels .
+git clone https://github.com/seppinho/imputation-panels
+docker build -t genepi/imputation-panels .
 nextflow run main.nf -c tests/test_three_vcfs.config -profile development
 ```
 
