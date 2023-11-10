@@ -9,7 +9,9 @@ nextflow run main.nf -c tests/test_three_vcfs.config -profile development
 ```
 ## Profiles
 We also provide profiles for `docker`, `singularity` and `slurm` in case you don't want to build the image locally. 
+```
 nextflow run main.nf -c tests/test_three_vcfs.config -profile docker
+```
 
 ## Sample Config
 ```
