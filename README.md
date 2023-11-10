@@ -6,3 +6,13 @@ This repository includes a Nextflow pipeline to shuffle reference panels and com
 docker build -t seppinho/imputation-panels .
 nextflow run main.nf -c tests/test_three_vcfs.config -profile development
 ```
+
+## Sample Config
+```
+params {
+    project = "three_vcfs"
+    files   = "tests/input/three/*.vcf.gz"
+    target_length = 20000000
+}
+Final msv data is written to output/${params.project}
+```
