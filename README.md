@@ -1,2 +1,2 @@
-# nf-imputationserver-refpanels
+# imputation-panels
 Create reference panels for Michigan Imputation Server
