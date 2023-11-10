@@ -15,5 +15,5 @@ params {
     files   = "tests/input/three/*.vcf.gz"
     target_length = 20000000
 }
-Final msv data is written to output/${params.project}
+Final msav data is written to output/${params.project}
 ```
