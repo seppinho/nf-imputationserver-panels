@@ -13,10 +13,10 @@ process SHUFFLE_COMPRESS {
     def input_name = "$input".endsWith("vcf.gz") ? "$input".replaceAll('.vcf.gz', '') : "$input.baseName"
      """
     echo $input_name   
-    rand-recom $input --seed $seed --uniform --target-length ${params.target_length} -O vcf.gz -o ${input_name}_recom.vcf.gz
+    rand-recom $input --seed $seed --uniform --target-length ${params.target_length} -O ${params.format} -o ${input_name}_recom.${params.format}
     rm $input
-    minimac4 --compress-reference ${input_name}_recom.vcf.gz > ${input_name}.msav
-    rm ${input_name}_recom.vcf.gz
+    minimac4 --compress-reference ${input_name}_recom.${params.format} > ${input_name}.msav
+    rm ${input_name}_recom.${params.format}
     """
 
 }
