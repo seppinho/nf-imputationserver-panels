@@ -10,15 +10,24 @@ for (param in requiredParams) {
 
 params.output = "output/${params.project}"
 
-include { SHUFFLE_COMPRESS } from '../modules/local/shuffle_compress'
+include { SHUFFLE  } from '../modules/local/shuffle'
+include { COMPRESS } from '../modules/local/compress'
 
 workflow IMPUTATION_PANELS {
 
-    Channel
-    .fromPath(params.files)
-    .set {files}
+    files = Channel
+        .fromPath(params.files)
 
-        SHUFFLE_COMPRESS ( 
+    if(params.shuffle) {
+
+        SHUFFLE ( 
+            files
+        )
+        files = SHUFFLE.out.recom_ch
+    
+    }
+
+    COMPRESS ( 
         files
     )
 
