@@ -18,7 +18,7 @@ workflow IMPUTATION_PANELS {
     files = Channel
         .fromPath(params.files)
 
-    if(params.shuffle) {
+    if(params.target_length != 0) {
 
         SHUFFLE ( 
             files
