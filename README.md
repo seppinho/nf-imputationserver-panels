@@ -1,4 +1,4 @@
-# imputation-panels
+# nf-imputationserver-panels
 This repository includes a Nextflow pipeline to shuffle reference panels and compress it as msav files for Minimac4. It works with all data formats rand-recom supports (tested with vcf.gz, bcf). 
 
 ## Getting started
