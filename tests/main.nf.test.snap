@@ -7,6 +7,38 @@
                 "tasksSucceeded": 3
             }
         ],
+        "meta": {
+            "nf-test": "0.8.4",
+            "nextflow": "24.04.2"
+        },
         "timestamp": "2023-11-10T17:02:16.158553"
+    },
+    "Should create three shuffeled msav files": {
+        "content": [
+            {
+                "tasksFailed": 0,
+                "tasksCount": 3,
+                "tasksSucceeded": 3
+            }
+        ],
+        "meta": {
+            "nf-test": "0.8.4",
+            "nextflow": "24.04.2"
+        },
+        "timestamp": "2024-07-21T17:04:11.480188"
+    },
+    "Should create three msav files from m3vcf": {
+        "content": [
+            {
+                "tasksFailed": 0,
+                "tasksCount": 2,
+                "tasksSucceeded": 2
+            }
+        ],
+        "meta": {
+            "nf-test": "0.8.4",
+            "nextflow": "24.04.2"
+        },
+        "timestamp": "2024-07-21T17:10:29.96432"
     }
 }

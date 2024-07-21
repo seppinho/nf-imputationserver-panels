@@ -12,25 +12,35 @@ params.output = "output/${params.project}"
 
 include { SHUFFLE  } from '../modules/local/shuffle'
 include { COMPRESS } from '../modules/local/compress'
+include { CONVERT } from '../modules/local/convert'
 
 workflow IMPUTATION_PANELS {
 
     files = Channel
         .fromPath(params.files)
 
-    if(params.target_length != 0) {
+    if (params.mode == 'recom') {
+        if(params.target_length != 0) {
 
-        SHUFFLE ( 
+            SHUFFLE ( 
+                files
+            )
+            files = SHUFFLE.out.recom_ch
+    
+        }
+
+        COMPRESS ( 
             files
         )
-        files = SHUFFLE.out.recom_ch
-    
+    } 
+    else if (params.mode == 'convert') {
+        CONVERT ( 
+            files
+        )
     }
-
-    COMPRESS ( 
-        files
-    )
-
+    else {
+        println "No mode detected"
+    }
 }
 
 

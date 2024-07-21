@@ -1,16 +1,14 @@
-@Grab(group='net.lingala.zip4j', module='zip4j', version='2.11.5')
-import net.lingala.zip4j.ZipFile;
-
 nextflow_pipeline {
 
     name "Test Workflow main.nf"
     script "main.nf"
 
-    test("Should create three msav files") {
+    test("Should create three shuffeled msav files") {
 
         when {
             params {
                 project  = "test-job"
+                mode = "recom"
                 files = "$projectDir/tests/input/three/*.vcf.gz"
             }   
         }
@@ -22,6 +20,22 @@ nextflow_pipeline {
 
     }
 
+    test("Should create three msav files from m3vcf") {
+
+        when {
+            params {
+                project  = "test-job2"
+                mode = "convert"
+                files = "$projectDir/tests/input/m3vcf/*.m3vcf.gz"
+            }   
+        }
+
+        then {
+            assert snapshot(workflow.trace).match()
+            assert workflow.success
+        }
+
+    }
 
 
 }
