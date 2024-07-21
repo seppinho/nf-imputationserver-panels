@@ -14,7 +14,7 @@ include { SHUFFLE  } from '../modules/local/shuffle'
 include { COMPRESS } from '../modules/local/compress'
 include { CONVERT } from '../modules/local/convert'
 
-workflow IMPUTATION_PANELS {
+workflow NF_IMPUTATIONSERVER_PANELS {
 
     files = Channel
         .fromPath(params.files)
