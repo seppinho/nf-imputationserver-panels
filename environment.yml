@@ -1,0 +1,15 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+name: nf-imputationserver
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+dependencies:
+  - pandoc=2.19.2
+  - cairo=1.16.0
+  - xorg-libxt=1.2.1
+  - fonts-anaconda=1
+  - openjdk=17.0.3
+  - csvtk=0.25.0
+  - unzip=6.0
