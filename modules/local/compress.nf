@@ -1,6 +1,6 @@
 process COMPRESS {
     
-    publishDir params.output, mode: 'copy'
+    publishDir params.output + '/msavs', mode: 'copy'
     
     input:
     path(input)
